@@ -1,0 +1,12 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h1>Enter a word to have it scored Scrabble-style</h1>
+<form action="/score" method="post">
+  <div class="form-group">
+    <label for="user-input">Input Word</label>
+    <input type="text" name="user-input" required="required" autofocus pattern="[a-zA-z]*" title="Please don't enter numbers or symbols." placeholder="cookie">
+    <button type="submit">See your word score!</button>
+  </div>
+</form>

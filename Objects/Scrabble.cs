@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ScrabbleScore.Objects
 {
@@ -42,7 +43,13 @@ namespace ScrabbleScore.Objects
 
     public int ScoreChecker()
     {
-      return _letterValues[_word];
+      string[] letters = _word.ToCharArray().Select(c => c.ToString()).ToArray();
+      int score = 0;
+      foreach(string letter in letters)
+      {
+        score += _letterValues[letter];
+      }
+      return score;
     }
   }
 }
